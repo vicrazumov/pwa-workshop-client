@@ -33,6 +33,12 @@ ul li:nth-child(odd) { background: #eee; }
 }
 #nav .backButton.hidden { opacity: 0 }
 
+#nav .offline {
+  float: right;
+  line-height: 50px;
+  margin-right: 10px;
+}
+
 .page, #container { width: 100vw; height: calc(100vh - 50px) }
 
 .modal { position: fixed; height: 100vh; width: 100vw; top: 0; left: 0; background-color: white; display: flex; flex-direction: column; align-items: center }

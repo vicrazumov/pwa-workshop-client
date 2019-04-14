@@ -22,8 +22,10 @@ const initChat = async (roomId, name) => {
   const chatForm = new Form({ action: '' }, [formContainer])
 
   chatForm.onsubmit = () => {
-    socket.emit('chat message', chatInput.value)
-    chatInput.value = ''
+    if (navigator.onLine) {
+      socket.emit('chat message', chatInput.value)
+      chatInput.value = ''
+    }
     return false
   }
 

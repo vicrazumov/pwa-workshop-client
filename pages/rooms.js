@@ -1,6 +1,6 @@
 import { goTo } from '../core/router.js'
 import { List, ListItem, Button, Form, Input, Link, Div } from '../core/dom-api.js'
-import showModal from '../utils/showModal.js'
+import showModal from '../utils/showJoinModal.js'
 import { SERVER } from '../utils/urls.js'
 
 const mountRoomsList = async () => {

@@ -1,6 +1,6 @@
 /*global moment*/
 import { Button, Div, List, ListItem } from '../core/dom-api.js'
-import showModal from '../utils/showModal.js'
+import showModal from '../utils/showJoinModal.js'
 import loadExternalLib from '../utils/loadExternalLib.js'
 import { MOMENT_URL, SERVER } from '../utils/urls.js'
 

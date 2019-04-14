@@ -8,6 +8,9 @@ if (workbox) {
     'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js',
   ])
 
+  // npm install workbox-cli --global
+  // workbox wizard --injectManifest
+  // workbox injectManifest
   workbox.precaching.precacheAndRoute([
   {
     "url": "android-chrome-192x192.png",
@@ -47,7 +50,7 @@ if (workbox) {
   },
   {
     "url": "core/router.js",
-    "revision": "bb5166e4d59783643057c13a51081564"
+    "revision": "0278b95f7e5a659ee022d0dbb9781c5f"
   },
   {
     "url": "favicon-16x16.png",
@@ -63,11 +66,11 @@ if (workbox) {
   },
   {
     "url": "index.html",
-    "revision": "71c0618e72546275e281d5df748c7b73"
+    "revision": "c559e56a240bf12cb6cea65a5aa587c1"
   },
   {
     "url": "index.js",
-    "revision": "4a149aca96de8c9dbd9487cf65917468"
+    "revision": "693bbe59d255a48608ce4ede6f3c38e1"
   },
   {
     "url": "manifest.json",
@@ -75,31 +78,35 @@ if (workbox) {
   },
   {
     "url": "pages/chat.js",
-    "revision": "937cd8c502549726059fa15b2bbe6ed0"
+    "revision": "5757510f0589f5d89e33ce80db43e8c2"
   },
   {
     "url": "pages/roomInfo.js",
-    "revision": "6a49158fdd89ebec58844afbb1d542be"
+    "revision": "2f6ce3e29af2d6693e1a8539cbec7488"
   },
   {
     "url": "pages/rooms.js",
-    "revision": "fc0442290e848ee492ff55ad55e5a7c3"
+    "revision": "c1a9debfd9436f822ed5243cbd59eaa6"
   },
   {
     "url": "service-worker-template.js",
-    "revision": "6956ed97060e74a2c99b40e823162ca8"
+    "revision": "13341e0cb33d5f756b8cceeebdc84500"
   },
   {
     "url": "styles.css",
-    "revision": "8acc0646e5a37f002cba75f09a6f53be"
+    "revision": "5ee1826b28805c15ba7db0cb7a664290"
   },
   {
     "url": "utils/loadExternalLib.js",
     "revision": "4e764c6039be85f984003611659f411e"
   },
   {
+    "url": "utils/showJoinModal.js",
+    "revision": "2bc7fca0ecda99b163727b279f8888c9"
+  },
+  {
     "url": "utils/showModal.js",
-    "revision": "6b5699d60f7135250cba35607583473c"
+    "revision": "750a5a4a06ac6c4d6d03d448316110ff"
   },
   {
     "url": "utils/urls.js",

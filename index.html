@@ -21,6 +21,15 @@
     <!-- iPhone 8, 7, 6s, 6 (750px x 1334px) -->
     <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/apple-launch-750x1334.png">
     <script type="module" src="/index.js"></script>
+    <script>
+      // Check that service workers are registered
+      if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+        })
+      }
+    </script>
   </head>
   <body>
     <div id="container"></div>

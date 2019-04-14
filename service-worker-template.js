@@ -15,7 +15,16 @@ if (workbox) {
     new RegExp('https://pwa-workshop-munich.herokuapp.com/rooms\/*'),
     new workbox.strategies.NetworkFirst({
       // you can set up requests here (headers, credentials, etc)
-      cacheName: 'api-cache'
+      cacheName: 'api-cache',
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxEntries: 10,
+          maxAgeSeconds: 60 * 60, // 1 hour
+        }),
+        new workbox.cacheableResponse.Plugin({
+          statuses: [0, 200],
+        }),
+      ],
     })
   )
 } else {

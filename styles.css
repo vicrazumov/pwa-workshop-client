@@ -44,3 +44,18 @@ ul li:nth-child(odd) { background: #eee; }
 .modal { position: fixed; height: 100vh; width: 100vw; top: 0; left: 0; background-color: white; display: flex; flex-direction: column; align-items: center }
 .modal input { text-align: center; }
 .modal button { margin: 10px; padding: 10px; width: 100% }
+
+/* @media screen and (orientation: landscape) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    height: 100vw;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  #general-container { height: 100vw; width: 100vh; }
+} */

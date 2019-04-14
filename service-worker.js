@@ -1,67 +1,30 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.2.0/workbox-sw.js')
 
 if (workbox) {
-  workbox.routing.registerRoute(
+  workbox.precaching.precacheAndRoute([
     '/',
-    new workbox.strategies.StaleWhileRevalidate()
-  )
+    '/index.js',
+    '/manifest.json',
+    '/core/dom-api.js',
+    '/core/router.js',
+    '/pages/chat.js',
+    '/pages/roomInfo.js',
+    '/pages/rooms.js',
+    '/utils/loadExternalLib.js',
+    '/utils/showModal.js',
+    '/utils/urls.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js',
+    '/styles.css',
+  ])
 
   workbox.routing.registerRoute(
-    /\.js$/,
-    new workbox.strategies.StaleWhileRevalidate({
-      cacheName: 'js-cache'
+    new RegExp('https://pwa-workshop-munich.herokuapp.com/rooms\/*'),
+    new workbox.strategies.NetworkFirst({
+      // you can set up requests here (headers, credentials, etc)
+      cacheName: 'api-cache'
     })
   )
 } else {
   console.log(`Boo! Workbox didn't load 😬`)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// workbox.routing.registerRoute(
-//   /\.css$/,
-//   new workbox.strategies.StaleWhileRevalidate({
-//     cacheName: 'css-cache',
-//   })
-// )
-
-// workbox.routing.registerRoute(
-//   new RegExp('https://pwa-workshop-munich.herokuapp.com/rooms\/*'),
-//   new workbox.strategies.NetworkFirst({
-//     // you can set up requests here (headers, credentials, etc)
-//     cacheName: 'api-cache'
-//   })
-// )
-
-// workbox.routing.registerRoute(
-//   /\.(?:png|jpg|jpeg|svg|gif)$/,
-//   new workbox.strategies.CacheFirst({
-//     cacheName: 'image-cache',
-//     plugins: [
-//       new workbox.expiration.Plugin({
-//         maxEntries: 20,
-//         maxAgeSeconds: 7 * 24 * 60 * 60,
-//       })
-//     ],
-//   })
-// )

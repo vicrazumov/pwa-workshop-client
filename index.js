@@ -1,4 +1,4 @@
-import { initialize } from './core/router.js'
+import { initialize, backButton } from './core/router.js'
 import Rooms from './pages/rooms.js'
 
 const asyncLoader = path => async params => {
@@ -15,3 +15,6 @@ const routes = {
 }
 
 initialize(routes, container)
+
+const nav = document.querySelector('#nav')
+nav.appendChild(backButton)

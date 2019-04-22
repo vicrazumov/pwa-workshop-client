@@ -3,7 +3,7 @@
  * @returns {string}
  */
 function uniqueId() {
-  return Math.round(Math.random() * Date.now()).toString(20).substr(0, 4);
+  return Math.round(Math.random() * Date.now()).toString(20).substr(0, 4)
 }
 
 /**
@@ -12,7 +12,7 @@ function uniqueId() {
 * @param {HTMLElement} el
 */
 function setAttrs(attrs, el) {
-  Object.keys(attrs).forEach(key => el[key] = attrs[key]);
+  Object.keys(attrs).forEach(key => el[key] = attrs[key])
 }
 
 /**
@@ -21,7 +21,7 @@ function setAttrs(attrs, el) {
 * @returns {string}
 */
 function naiveSanitizer(val) {
-  return val.replace(/(on\w+=)/gmi, `${uniqueId()}=`);
+  return val.replace(/(on\w+=)/gmi, `${uniqueId()}=`)
 }
 
 /**
@@ -32,11 +32,11 @@ function naiveSanitizer(val) {
 */
 function ifStringSetText(val, el) {
   if (!!val && !!val.match) {
-      el.innerHTML = naiveSanitizer(val);
-      return true;
+    el.innerHTML = naiveSanitizer(val)
+    return true
   }
 
-  return false;
+  return false
 }
 
 /**
@@ -45,22 +45,22 @@ function ifStringSetText(val, el) {
 * @returns {function}
 */
 function createElement(tagName) {
-  return function (attrs, children) {
-      const el = document.createElement(tagName);
-      attrs && setAttrs(attrs, el);
-      if (children) {
-          if (!!children.map) {
-              children.forEach(child => {
-                  if (!ifStringSetText(child, el)) {
-                      el.appendChild(child);
-                  }
-              });
+  return function(attrs, children) {
+    const el = document.createElement(tagName)
+    attrs && setAttrs(attrs, el)
+    if (children) {
+      if (Array.isArray(children)) {
+        children.forEach(child => {
+          if (!ifStringSetText(child, el)) {
+            el.appendChild(child)
           }
-
-          ifStringSetText(children, el);
+        })
       }
-      return el;
-  };
+
+      ifStringSetText(children, el)
+    }
+    return el
+  }
 }
 
 export const Button = createElement('button')

@@ -1,3 +1,5 @@
+/*global io*/
+
 import { List, ListItem, Button, Form, Input, Div } from '../core/dom-api.js'
 import loadExternalLib from '../utils/loadExternalLib.js'
 import { SOCKET_IO_URL, SERVER } from '../utils/urls.js'
@@ -8,7 +10,7 @@ const initChat = async (roomId, name) => {
   }
 
   const socket = io(SERVER)
-  socket.emit('join', roomId, name, (error, response) =>
+  socket.emit('join', roomId, name, (error) =>
     error ? console.error(error) : () => {}
   )
 

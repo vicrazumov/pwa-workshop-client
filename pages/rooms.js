@@ -4,7 +4,7 @@ import showModal from '../utils/showModal.js'
 import { SERVER } from '../utils/urls.js'
 
 const mountRoomsList = async () => {
-  document.title = `PWA chat`
+  document.title = 'PWA chat'
 
   const rooms = await fetch(`${SERVER}/rooms`).then(response => response.json())
 

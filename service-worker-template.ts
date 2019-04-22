@@ -1,3 +1,6 @@
+declare const workbox: typeof import('workbox-sw')
+/* global workbox importScripts */
+
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.2.0/workbox-sw.js')
 
 if (workbox) {
@@ -30,5 +33,5 @@ if (workbox) {
     })
   )
 } else {
-  console.log(`Boo! Workbox didn't load 😬`)
+  console.log('Boo! Workbox did not load 😬')
 }

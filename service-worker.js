@@ -1,3 +1,5 @@
+/* global workbox importScripts */
+
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.2.0/workbox-sw.js')
 
 if (workbox) {
@@ -46,11 +48,11 @@ if (workbox) {
   },
   {
     "url": "core/dom-api.js",
-    "revision": "4810eecb9bd8b2cfd9dfcf4cd1940318"
+    "revision": "0b7a3360d6c683f567b5c0730d2dc566"
   },
   {
     "url": "core/router.js",
-    "revision": "0278b95f7e5a659ee022d0dbb9781c5f"
+    "revision": "b39b3faf3ddad4b9c631ba03ba542224"
   },
   {
     "url": "favicon-16x16.png",
@@ -77,20 +79,20 @@ if (workbox) {
     "revision": "964fbdaca37644c02fb51f7ed5328ac3"
   },
   {
+    "url": "package.json",
+    "revision": "fa78f6b3b64a8627217d282ddc9237ba"
+  },
+  {
     "url": "pages/chat.js",
-    "revision": "5757510f0589f5d89e33ce80db43e8c2"
+    "revision": "8d4db06da65c66d3d3a4aa2fbfcbc666"
   },
   {
     "url": "pages/roomInfo.js",
-    "revision": "2f6ce3e29af2d6693e1a8539cbec7488"
+    "revision": "0f81878ebc740818114fb892928c705f"
   },
   {
     "url": "pages/rooms.js",
-    "revision": "c1a9debfd9436f822ed5243cbd59eaa6"
-  },
-  {
-    "url": "service-worker-template.js",
-    "revision": "13341e0cb33d5f756b8cceeebdc84500"
+    "revision": "84f86d90384e113517c95c4f413b2ca5"
   },
   {
     "url": "styles.css",
@@ -114,7 +116,7 @@ if (workbox) {
   },
   {
     "url": "workbox-config.js",
-    "revision": "2ac937caff661023bfa06bac9aef8909"
+    "revision": "8bdb2a33eae707f1e04230cc969fd9a3"
   }
 ])
 
@@ -135,5 +137,5 @@ if (workbox) {
     })
   )
 } else {
-  console.log(`Boo! Workbox didn't load 😬`)
+  console.log('Boo! Workbox did not load 😬')
 }

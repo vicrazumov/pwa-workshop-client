@@ -1,3 +1,5 @@
+import { Button } from './dom-api.js'
+
 // View Container
 let container
 let currentView
@@ -50,6 +52,11 @@ export const loadRoute = (url, noPush) => {
 
   if (route) {
     mountRouteElement(route, Object.assign({}, getLocationParams(), { noPush }))
+    if (history.state) {
+      backButton.classList.remove('hidden')
+    } else {
+      backButton.classList.add('hidden')
+    }
   } else {
     console.log('no route found')
   }
@@ -90,3 +97,9 @@ export const initialize = (routesDefinition, containerElement) => {
 
   loadRoute()
 }
+
+const goBack = () => {
+  window.history.back()
+}
+
+export const backButton = new Button({ onclick: () => goBack(), className: 'backButton' }, '<')

@@ -80,6 +80,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@types/workbox-sw@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@types/workbox-sw/-/workbox-sw-4.2.0.tgz#b867c7143e84bb30407c40c42712c2cdf107a949"
+
 acorn-jsx@^5.0.0:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.0.1.tgz#32a064fd925429216a09b141102bfdd185fae40e"
@@ -740,6 +744,10 @@ which@^1.2.9:
 wordwrap@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
+
+workbox-sw@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/workbox-sw/-/workbox-sw-4.3.0.tgz#07a8b0df4e3a4ad05bb56f5d5686723923738e56"
 
 wrappy@1:
   version "1.0.2"
